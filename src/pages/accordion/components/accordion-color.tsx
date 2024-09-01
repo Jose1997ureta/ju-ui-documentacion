@@ -1,5 +1,6 @@
 import {
 	Accordion,
+	AccordionItemOnClick,
 	Card,
 	ColorProps,
 	ExcludeType,
@@ -21,8 +22,8 @@ export const AccordionColor = () => {
 	const { handleChangeTab, keyCurrent } = useTab();
 	const [activekey, setActivekey] = useState<string[]>([]);
 
-	const handleClick = (key: string[]) => {
-		setActivekey(key);
+	const handleClick = ({ items }: AccordionItemOnClick) => {
+		setActivekey(items);
 	};
 
 	return (
@@ -65,7 +66,8 @@ export const AccordionColor = () => {
 
 			{keyCurrent === "code" ? (
 				<CodeShared>
-					{`import { Accordion } from "@jose-ureta/ju-ui";
+					{`import { Accordion, AccordionItemOnClick } from "@jose-ureta/ju-ui";
+import { useState } from "react";
 
 const text = "s un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un";
 
@@ -77,8 +79,8 @@ const color = ["default", "primary", "secondary"] as IncludeType<
 const App = () => {
 	const [activekey, setActivekey] = useState<string[]>([]);
 
-	const handleClick = (key: string[]) => {
-		setActivekey(key);
+	const handleClick = ({ items }: AccordionItemOnClick) => {
+		setActivekey(items);
 	};
 
 	return (

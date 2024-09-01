@@ -3,8 +3,13 @@ import { Layout } from "../../shared/layout/layout";
 import {
 	AccordionActiveKeys,
 	AccordionColor,
+	AccordionCustomStyle,
+	AccordionData,
+	AccordionDataCustom,
 	AccordionDefault,
 	AccordionDisabledKeys,
+	AccordionHeaderContent,
+	AccordionLoading,
 	AccordionMultiple,
 	AccordionRadius,
 } from "./components";
@@ -28,6 +33,11 @@ export const AccordionPage = () => {
 				<AccordionDisabledKeys />
 				<AccordionColor />
 				<AccordionRadius />
+				<AccordionData />
+				<AccordionDataCustom />
+				<AccordionLoading />
+				<AccordionHeaderContent />
+				<AccordionCustomStyle />
 			</div>
 		</Layout>
 	);

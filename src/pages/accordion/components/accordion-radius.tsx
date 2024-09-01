@@ -1,4 +1,9 @@
-import { Accordion, Card, SizeProps } from "@jose-ureta/ju-ui";
+import {
+	Accordion,
+	AccordionItemOnClick,
+	Card,
+	SizeProps,
+} from "@jose-ureta/ju-ui";
 import { CodeShared, TabShared } from "../../../shared/components";
 import { useTab } from "../../../shared/hooks/use-tab";
 import { useState } from "react";
@@ -12,8 +17,8 @@ export const AccordionRadius = () => {
 	const { handleChangeTab, keyCurrent } = useTab();
 	const [activekey, setActivekey] = useState<string[]>([]);
 
-	const handleClick = (key: string[]) => {
-		setActivekey(key);
+	const handleClick = ({ items }: AccordionItemOnClick) => {
+		setActivekey(items);
 	};
 
 	return (
@@ -56,7 +61,8 @@ export const AccordionRadius = () => {
 
 			{keyCurrent === "code" ? (
 				<CodeShared>
-					{`import { Accordion } from "@jose-ureta/ju-ui";
+					{`import { Accordion, AccordionItemOnClick } from "@jose-ureta/ju-ui";
+import { useState } from "react";
 
 const text = "s un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un";
 
@@ -65,8 +71,8 @@ const radius = ["xs", "sm", "md", "lg"] as SizeProps[];
 const App = () => {
 	const [activekey, setActivekey] = useState<string[]>([]);
 
-	const handleClick = (key: string[]) => {
-		setActivekey(key);
+	const handleClick = ({ items }: AccordionItemOnClick) => {
+		setActivekey(items);
 	};
 
 	return (

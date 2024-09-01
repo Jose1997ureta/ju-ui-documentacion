@@ -1,8 +1,7 @@
 import { Card, TextArea } from "@jose-ureta/ju-ui";
-
 import { TabShared, CodeShared } from "../../../shared/components";
 import { useTab } from "../../../shared/hooks/use-tab";
-import { AiFillApi, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 
 export const TextAreaDisabled = () => {
 	const { handleChangeTab, keyCurrent } = useTab();
@@ -20,11 +19,7 @@ export const TextAreaDisabled = () => {
 								placeholder="Ingresar mensaje"
 								startContent={<AiOutlineUser />}
 								disabled
-							/>
-							<TextArea
-								placeholder="Ingresar mensaje"
-								startContent={<AiFillApi />}
-								disabled
+								value=""
 							/>
 						</div>
 					</Card.Body>
@@ -34,6 +29,7 @@ export const TextAreaDisabled = () => {
 			{keyCurrent === "code" ? (
 				<CodeShared>
 					{`import { TextArea } from "@jose-ureta/ju-ui";
+import { AiOutlineUser } from "react-icons/ai";
 
 const App = () => {
 	return (
@@ -42,11 +38,7 @@ const App = () => {
 				disabled
 				placeholder="Ingresar mensaje"
 				startContent={<AiOutlineUser />}
-			/>
-			<TextArea
-				disabled
-				placeholder="Ingresar mensaje"
-				startContent={<AiFillApi />}
+				value=""
 			/>
 		</div>
 	)

@@ -2,7 +2,7 @@ import { Card, TextArea } from "@jose-ureta/ju-ui";
 
 import { TabShared, CodeShared } from "../../../shared/components";
 import { useTab } from "../../../shared/hooks/use-tab";
-import { AiFillApi, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -44,12 +44,10 @@ export const TextAreaState = () => {
 								value={values.message2}
 								onChange={handleChange}
 								placeholder="Ingresar mensaje"
-								endContent={<AiFillApi />}
 								disabled
 								error="El campo es requerido"
 								touched={true}
 							/>
-
 							<TextArea
 								name="message3"
 								value={values.message3}
@@ -72,6 +70,7 @@ export const TextAreaState = () => {
 					{`import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Input } from "@jose-ureta/ju-ui";
+import { AiOutlineUser } from "react-icons/ai";
 
 const App = () => {
 	const { values, handleChange } = useFormik({
@@ -102,7 +101,6 @@ const App = () => {
 				value={values.message2}
 				onChange={handleChange}
 				placeholder="Ingresar mensaje"
-				endContent={<AiFillApi />}
 				disabled
 				error="El campo es requerido"
 				touched={true}

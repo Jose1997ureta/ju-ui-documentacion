@@ -2,10 +2,12 @@ import { Card, TextArea } from "@jose-ureta/ju-ui";
 
 import { TabShared, CodeShared } from "../../../shared/components";
 import { useTab } from "../../../shared/hooks/use-tab";
-import { AiFillApi, AiOutlineUser } from "react-icons/ai";
+import { useState } from "react";
+import { AiOutlineUser } from "react-icons/ai";
 
 export const TextAreaIcon = () => {
 	const { handleChangeTab, keyCurrent } = useTab();
+	const [value, setValue] = useState<string>("");
 
 	return (
 		<div className="mt-4" id="icon">
@@ -17,12 +19,10 @@ export const TextAreaIcon = () => {
 					<Card.Body className="border rounded-md">
 						<div className="grid grid-cols-2 items-center gap-x-3">
 							<TextArea
+								value={value}
 								placeholder="Ingresar mensaje"
 								startContent={<AiOutlineUser />}
-							/>
-							<TextArea
-								placeholder="Ingresar mensaje"
-								startContent={<AiFillApi />}
+								onChange={(e) => setValue(e.target.value)}
 							/>
 						</div>
 					</Card.Body>
@@ -31,18 +31,19 @@ export const TextAreaIcon = () => {
 
 			{keyCurrent === "code" ? (
 				<CodeShared>
-					{`import { Input } from "@jose-ureta/ju-ui";
+					{`import { TextArea } from "@jose-ureta/ju-ui";
+import { useState } from "react";
+import { AiOutlineUser } from "react-icons/ai";
 
 const App = () => {
+	const [value, setValue] = useState<string>("");
 	return (
 		<div className="grid grid-cols-2 items-center gap-x-3">
 			<TextArea
+				value={value}
 				placeholder="Ingresar mensaje"
 				startContent={<AiOutlineUser />}
-			/>
-			<TextArea
-				placeholder="Ingresar mensaje"
-				startContent={<AiFillApi />}
+				onChange={(e) => setValue(e.target.value)}
 			/>
 		</div>
 	)

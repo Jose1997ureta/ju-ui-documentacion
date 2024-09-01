@@ -2,11 +2,21 @@ import { Card, ExcludeType, SizeProps, TextArea } from "@jose-ureta/ju-ui";
 
 import { useTab } from "../../../shared/hooks/use-tab";
 import { TabShared, CodeShared } from "../../../shared/components";
+import { useFormik } from "formik";
+
+const size = ["sm", "md", "lg"] as ExcludeType<SizeProps, "xs">[];
 
 export const TextAreaSize = () => {
 	const { handleChangeTab, keyCurrent } = useTab();
 
-	const size = ["sm", "md", "lg"] as ExcludeType<SizeProps, "xs">[];
+	const { values, handleChange } = useFormik({
+		initialValues: {
+			sm: "",
+			md: "",
+			lg: "",
+		},
+		onSubmit: () => {},
+	});
 
 	return (
 		<div className="mt-4" id="size">
@@ -19,7 +29,13 @@ export const TextAreaSize = () => {
 						<div className="flex gap-x-4">
 							{size.map((el) => (
 								<div className="w-1/3" key={el}>
-									<TextArea size={el} placeholder="Ingresar mensaje" />
+									<TextArea
+										size={el}
+										value={values[el]}
+										placeholder="Ingresar mensaje"
+										onChange={handleChange}
+										name={el}
+									/>
 								</div>
 							))}
 						</div>
@@ -31,15 +47,30 @@ export const TextAreaSize = () => {
 				<CodeShared>
 					{`import { useFormik } from "formik";
 import { ExcludeType, SizeProps, TextArea } from "@jose-ureta/ju-ui";
+import { useFormik } from "formik";
+
+const size = ["sm", "md", "lg"] as ExcludeType<SizeProps, "xs">[];
 
 const App = () => {
-	const size = ["sm", "md", "lg"] as ExcludeType<SizeProps, "xs">[];
-
+	const { values, handleChange } = useFormik({
+		initialValues: {
+			sm: "",
+			md: "",
+			lg: "",
+		},
+		onSubmit: () => {},
+	});
 	return (
 		<div className="flex items-center gap-x-4">
 			{size.map((el) => (
 				<div className="w-1/3" key={el}>
-					<TextArea size={el} placeholder="Ingresar mensaje" />
+					<TextArea
+						name={el}
+						size={el}
+						value={values[el]}
+						placeholder="Ingresar mensaje"
+						onChange={handleChange}
+					/>
 				</div>
 			))}
 		</div>

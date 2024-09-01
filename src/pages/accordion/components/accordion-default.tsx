@@ -1,4 +1,4 @@
-import { Accordion, Card } from "@jose-ureta/ju-ui";
+import { Accordion, AccordionItemOnClick, Card } from "@jose-ureta/ju-ui";
 import { CodeShared, TabShared } from "../../../shared/components";
 import { useTab } from "../../../shared/hooks/use-tab";
 import { useState } from "react";
@@ -7,8 +7,8 @@ export const AccordionDefault = () => {
 	const { handleChangeTab, keyCurrent } = useTab();
 	const [activekey, setActivekey] = useState<string[]>(["item1", "item2"]);
 
-	const handleClick = (key: string[]) => {
-		setActivekey(key);
+	const handleClick = ({ items }: AccordionItemOnClick) => {
+		setActivekey(items);
 	};
 
 	return (
@@ -67,13 +67,14 @@ export const AccordionDefault = () => {
 
 			{keyCurrent === "code" ? (
 				<CodeShared>
-					{`import { Accordion } from "@jose-ureta/ju-ui";
+					{`import { Accordion, AccordionItemOnClick } from "@jose-ureta/ju-ui";
+import { useState } from "react";
 
 const App = () => {
   const [activekey, setActivekey] = useState<string[]>([]);
 
-	const handleClick = (key: string[]) => {
-		setActivekey(key);
+	const handleClick = ({ items }: AccordionItemOnClick) => {
+		setActivekey(items);
 	};
 
 	return (

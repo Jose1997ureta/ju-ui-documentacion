@@ -51,6 +51,7 @@ export const TextAreaCounter = () => {
 				<CodeShared>
 					{`import { Input } from "@jose-ureta/ju-ui";
 import { useFormik } from "formik";
+import { AiFillApi, AiOutlineUser } from "react-icons/ai";
 
 const App = () => {
 	const { values, handleChange } = useFormik({
