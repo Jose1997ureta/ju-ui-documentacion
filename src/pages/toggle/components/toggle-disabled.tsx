@@ -10,7 +10,7 @@ export const ToggleDisabled = () => {
 
 	return (
 		<div className="mt-2" id="uso">
-			<h2 className="text-2xl mt-4">Label Position</h2>
+			<h2 className="text-2xl mt-4">Disabled</h2>
 			<TabShared keyCurrent={keyCurrent} handleChangeTab={handleChangeTab} />
 
 			{keyCurrent === "preview" ? (

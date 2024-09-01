@@ -134,7 +134,7 @@ const App = () => {
 
 					{item.id === "item2" ? (
 						<div className="max-h-[100px] overflow-auto">
-							{<p>{text}</p>}
+							{loading ? <p>Loading</p> : <p>{text}</p>}
 						</div>
 					) : null}
 

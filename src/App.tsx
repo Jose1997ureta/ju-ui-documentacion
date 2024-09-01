@@ -9,21 +9,27 @@ import { RadioPage } from "./pages/radio/radio";
 import { TogglePage } from "./pages/toggle/toggle";
 import { AvatarPage } from "./pages/avatar/avatar";
 import { AccordionPage } from "./pages/accordion/accordion";
+import { GuiaPage } from "./pages/guia/guia";
+import { ColorPage } from "./pages/theme/color";
+import { CustomVarsPage } from "./pages/theme/custom-var";
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/input" element={<InputPage />} />
-				<Route path="/textarea" element={<TextAreaPage />} />
-				<Route path="/button" element={<ButtonPage />} />
-				<Route path="/button-icon" element={<ButtonIconPage />} />
-				<Route path="/chip" element={<ChipPage />} />
-				<Route path="/checkbox" element={<CheckBoxPage />} />
-				<Route path="/radio" element={<RadioPage />} />
-				<Route path="/toggle" element={<TogglePage />} />
-				<Route path="/avatar" element={<AvatarPage />} />
-				<Route path="/accordion" element={<AccordionPage />} />
+				<Route path="/component/input" element={<InputPage />} />
+				<Route path="/component/textarea" element={<TextAreaPage />} />
+				<Route path="/component/button" element={<ButtonPage />} />
+				<Route path="/component/button-icon" element={<ButtonIconPage />} />
+				<Route path="/component/chip" element={<ChipPage />} />
+				<Route path="/component/checkbox" element={<CheckBoxPage />} />
+				<Route path="/component/radio" element={<RadioPage />} />
+				<Route path="/component/toggle" element={<TogglePage />} />
+				<Route path="/component/avatar" element={<AvatarPage />} />
+				<Route path="/component/accordion" element={<AccordionPage />} />
+				<Route path="/guia/installation" element={<GuiaPage />} />
+				<Route path="/theme/color" element={<ColorPage />} />
+				<Route path="/theme/custom-vars" element={<CustomVarsPage />} />
 			</Routes>
 		</BrowserRouter>
 	);
