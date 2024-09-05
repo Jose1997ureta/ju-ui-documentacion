@@ -12,11 +12,13 @@ import { AccordionPage } from "./pages/accordion/accordion";
 import { GuiaPage } from "./pages/guia/guia";
 import { ColorPage } from "./pages/theme/color";
 import { CustomVarsPage } from "./pages/theme/custom-var";
+import { ConfirmationPage } from "./pages/overlay/confirmation/confirmation";
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
+				<Route path="/" element={<GuiaPage />} />
 				<Route path="/component/input" element={<InputPage />} />
 				<Route path="/component/textarea" element={<TextAreaPage />} />
 				<Route path="/component/button" element={<ButtonPage />} />
@@ -30,6 +32,10 @@ function App() {
 				<Route path="/guia/installation" element={<GuiaPage />} />
 				<Route path="/theme/color" element={<ColorPage />} />
 				<Route path="/theme/custom-vars" element={<CustomVarsPage />} />
+				<Route
+					path="/component/overlay/confirmation"
+					element={<ConfirmationPage />}
+				/>
 			</Routes>
 		</BrowserRouter>
 	);

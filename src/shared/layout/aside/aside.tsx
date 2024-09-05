@@ -83,6 +83,11 @@ const dataMenu = [
 				path: "/component/toggle",
 				name: "Toggle",
 			},
+			{
+				id: "confirmation",
+				path: "/component/overlay/confirmation",
+				name: "Confirmacion",
+			},
 			/*  */
 		],
 	},
