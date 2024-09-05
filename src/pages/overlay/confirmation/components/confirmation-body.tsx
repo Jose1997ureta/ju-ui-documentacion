@@ -55,7 +55,7 @@ export const ConfirmationBody = () => {
 								isClose={isClose}
 								isIcon={isIcon}
 							>
-								<p>
+								<p className="text-sm">
 									Lorem ipsum dolor sit amet consectetur adipisicing elit.
 									Commodi, cum illum ad temporibus, delectus tenetur cumque
 									necessitatibus praesentium facilis dolorem quasi ab vitae,
@@ -161,7 +161,7 @@ const App = () => {
 					isClose={isClose}
 					isIcon={isIcon}
 				>
-					<p>
+					<p className="text-sm">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Commodi, cum illum ad temporibus, delectus tenetur cumque
 						necessitatibus praesentium facilis dolorem quasi ab vitae,

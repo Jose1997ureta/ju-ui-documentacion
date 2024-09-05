@@ -13,7 +13,7 @@ export const RadioLabel = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="flex items-center gap-x-7">
+						<div className="grid sm:grid-cols-2 gap-7 md:grid-cols-3">
 							<Radio value="radio1" name="radio" label="Radio Button" />
 							<Radio
 								value="radio2"
@@ -37,7 +37,7 @@ export const RadioLabel = () => {
 
 const App = () => {
 	return (
-		<div className="flex items-center gap-x-7">
+		<div className="grid sm:grid-cols-2 gap-7 md:grid-cols-3">
 			<Radio value="radio1" name="radio" label="Radio Button" />
 			<Radio
 				value="radio2"

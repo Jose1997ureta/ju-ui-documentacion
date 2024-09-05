@@ -13,7 +13,7 @@ export const ButtonWithIcon = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="flex items-center gap-x-3">
+						<div className="flex items-center gap-3 flex-wrap">
 							<Button
 								variant="solid"
 								color="primary"
@@ -49,7 +49,7 @@ export const ButtonWithIcon = () => {
 
 const App = () => {
 	return (
-		<div className="flex items-center gap-x-3">
+		<div className="flex items-center gap-3 flex-wrap">
 			<Button
 				variant="solid"
 				color="primary"

@@ -26,9 +26,9 @@ export const TextAreaSize = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="flex gap-x-4">
+						<div className="grid sm:grid-cols-2 gap-3 md:grid-cols-3">
 							{size.map((el) => (
-								<div className="w-1/3" key={el}>
+								<div key={el}>
 									<TextArea
 										size={el}
 										value={values[el]}
@@ -61,9 +61,9 @@ const App = () => {
 		onSubmit: () => {},
 	});
 	return (
-		<div className="flex items-center gap-x-4">
+		<div className="grid sm:grid-cols-2 gap-3 md:grid-cols-3">
 			{size.map((el) => (
-				<div className="w-1/3" key={el}>
+				<div key={el}>
 					<TextArea
 						name={el}
 						size={el}

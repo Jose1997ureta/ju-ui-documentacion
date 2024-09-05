@@ -12,7 +12,7 @@ export const AvatarBorder = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="flex items-center gap-x-3">
+						<div className="flex items-center gap-3 flex-wrap">
 							<Avatar border="default" name="Jos" />
 							<Avatar
 								border="primary"
@@ -40,7 +40,7 @@ export const AvatarBorder = () => {
 
 const App = () => {
 	return (
-		<div className="flex items-center gap-x-3">
+		<div className="flex items-center gap-3 flex-wrap">
 			<Avatar
 				border="default"
 				name="Jos"

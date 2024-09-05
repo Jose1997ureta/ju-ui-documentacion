@@ -15,7 +15,7 @@ export const InputIcon = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="grid grid-cols-3 items-center gap-x-3">
+						<div className="grid sm:grid-cols-2 gap-3 md:grid-cols-3">
 							<Input
 								placeholder="Ingresar nombre"
 								startContent={<AiOutlineUser />}
@@ -37,7 +37,7 @@ export const InputIcon = () => {
 
 const App = () => {
   return (
-		<div className="grid grid-cols-3 items-center gap-x-3">
+		<div className="grid sm:grid-cols-2 gap-3 md:grid-cols-3">
 			<Input
 				placeholder="Ingresar nombre"
 				startContent={<AiOutlineUser />}

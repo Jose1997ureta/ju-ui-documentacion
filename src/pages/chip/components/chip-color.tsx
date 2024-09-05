@@ -12,7 +12,7 @@ export const ChipColor = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="flex items-center gap-x-3">
+						<div className="flex items-center gap-3 flex-wrap">
 							<Chip color="primary">Primary</Chip>
 							<Chip color="secondary">Secondary</Chip>
 							<Chip color="neutral">Neutral</Chip>
@@ -31,7 +31,7 @@ export const ChipColor = () => {
 
 const App = () => {
 	return (
-		<div className="flex items-center gap-x-3">
+		<div className="flex items-center gap-3 flex-wrap">
 			<Chip color="primary">Primary</Chip>
 			<Chip color="secondary">Secondary</Chip>
 			<Chip color="neutral">Neutral</Chip>

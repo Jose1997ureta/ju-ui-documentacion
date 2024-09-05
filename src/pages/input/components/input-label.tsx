@@ -15,7 +15,7 @@ export const InputLabel = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="grid grid-cols-3 items-center gap-x-3 gap-y-4">
+						<div className="grid sm:grid-cols-2 gap-3 md:grid-cols-3">
 							<div>
 								<LabelForm label="Nombre" />
 								<Input placeholder="Ingresar nombre" />
@@ -51,7 +51,7 @@ export const InputLabel = () => {
 
 const App = () => {
 	return (
-		<div className="grid grid-cols-3 items-center gap-x-3 gap-y-4">
+		<div className="grid sm:grid-cols-2 gap-3 md:grid-cols-3">
 			<div>
 				<LabelForm label="Nombre" />
 				<Input placeholder="Ingresar nombre" />

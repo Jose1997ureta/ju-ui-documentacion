@@ -24,12 +24,12 @@ export const InputPattern = () => {
 		<div className="mt-4" id="pattern">
 			<h3 className="text-xl">Pattern</h3>
 
-			<div className="flex items-center mt-1 flex-wrap">
+			<div className="flex items-center mt-1 flex-wrap max-sm:mb-4">
 				<p className="text-neutral-700 mr-1">
 					Puede recibir distintos formatos de escritura para validar la entrada
 					de texto como:{" "}
 				</p>
-				<div className="flex items-center gap-0.5">
+				<div className="flex items-center gap-0.5 flex-wrap">
 					<Chip color="neutral" variant="flat">
 						number
 					</Chip>
@@ -60,7 +60,7 @@ export const InputPattern = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-2">
 					<Card.Body className="border rounded-md">
-						<div className="grid grid-cols-3 items-center gap-3">
+						<div className="grid sm:grid-cols-2 gap-3 md:grid-cols-3">
 							<Input
 								name="number"
 								value={values.number}
@@ -136,7 +136,7 @@ const App = () => {
 	});
 		
   return (
-		<div className="grid grid-cols-3 items-center gap-3">
+		<div className="grid sm:grid-cols-2 gap-3 md:grid-cols-3">
 			<Input
 				name="number"
 				value={values.number}

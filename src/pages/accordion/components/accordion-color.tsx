@@ -34,7 +34,7 @@ export const AccordionColor = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="grid grid-cols-2 gap-4">
+						<div className="grid sm:grid-cols-2 gap-3">
 							{color.map((el) => (
 								<Accordion key={el} activeKeys={activekey} multiple color={el}>
 									<Accordion.Item
@@ -84,7 +84,7 @@ const App = () => {
 	};
 
 	return (
-		<div className="grid grid-cols-2 gap-4">
+		<div className="grid sm:grid-cols-2 gap-3">
 			{color.map((el) => (
 				<Accordion key={el} activeKeys={activekey} multiple color={el}>
 					<Accordion.Item

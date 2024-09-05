@@ -15,7 +15,7 @@ export const CheckboxDisabled = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="flex items-center gap-x-7">
+						<div className="grid sm:grid-cols-2 gap-7 md:grid-cols-3">
 							<CheckBox
 								id="checkbox1"
 								value={value}
@@ -66,7 +66,7 @@ const App = () => {
   const [value, setValue] = useState<boolean>(false);
 
 	return (
-		<div className="flex items-center gap-x-7">
+		<div className="grid sm:grid-cols-2 gap-7 md:grid-cols-3">
 			<CheckBox
 				id="checkbox1"
 				value={value}

@@ -22,7 +22,7 @@ export const AccordionCustomStyle = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="grid grid-cols-2 gap-3">
+						<div className="grid sm:grid-cols-2 gap-3">
 							<Accordion activeKeys={activekey}>
 								<Accordion.Item
 									keyCurrent="item1"
@@ -87,7 +87,7 @@ const App = () => {
 	};
 
 	return (
-		<div className="grid grid-cols-2 gap-3">
+		<div className="grid sm:grid-cols-2 gap-3">
 			<Accordion activeKeys={activekey}>
 				<Accordion.Item
 					keyCurrent="item1"

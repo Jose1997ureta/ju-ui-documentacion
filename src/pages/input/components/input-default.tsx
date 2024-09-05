@@ -13,12 +13,12 @@ export const InputDefault = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="flex items-center gap-x-4">
-							<div className="w-1/2">
+						<div className="grid sm:grid-cols-2 gap-3">
+							<div>
 								<LabelForm label="Nombre" />
 								<Input placeholder="Ingresar nombre" />
 							</div>
-							<div className="w-1/2">
+							<div>
 								<LabelForm label="Email" />
 								<Input placeholder="Ingresar correo electronico" />
 							</div>
@@ -33,12 +33,12 @@ export const InputDefault = () => {
 
 const App = () => {
 	return (
-		<div className="flex items-center gap-x-4">
-			<div className="w-1/2">
+		<div className="grid sm:grid-cols-2 gap-3">
+			<div>
 				<LabelForm label="Nombre" />
 				<Input placeholder="Ingresar nombre" />
 			</div>
-			<div className="w-1/2">
+			<div>
 				<LabelForm label="Email" />
 				<Input placeholder="Ingresar correo electronico" />
 			</div>

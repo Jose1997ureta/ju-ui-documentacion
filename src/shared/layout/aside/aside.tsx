@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import { AsideMenu } from "./components/aside-menu";
 import { AsideDataMenuProps } from "./interface/aside.interface";
+import { useMitt } from "../../hooks/use-mitt";
+import { useScreen } from "../../hooks/use-screen";
 
 const dataMenu = [
 	{
@@ -94,14 +97,35 @@ const dataMenu = [
 ] as AsideDataMenuProps[];
 
 export const Aside = () => {
+	const { emitter } = useMitt();
+	const [isShow, setIsShow] = useState<boolean>(false);
+	const { isResponsive } = useScreen();
+
+	useEffect(() => {
+		const handleShow = (state: boolean) => {
+			setIsShow(state);
+		};
+
+		emitter.on("isMenu", handleShow);
+
+		return () => {
+			emitter.off("isMenu", handleShow);
+		};
+	}, [emitter]);
+
+	useEffect(() => {
+		if (isResponsive) setIsShow(false);
+		else setIsShow(true);
+	}, [isResponsive]);
+
 	return (
-		<aside className="relative z-10">
-			<div
-				className="fixed w-[250px]"
-				style={{
-					height: "calc(100vh - 92px)",
-				}}
-			>
+		<aside
+			className={`max-md:fixed relative z-10 max-md:top-[60px] max-md:left-0 max-md:w-full ${
+				isShow ? "block" : "hidden"
+			}`}
+			id="aside"
+		>
+			<div className="md:fixed md:w-[250px] bg-white md:h-[calc(100vh_-_92px)] h-[calc(100vh_-_60px)]">
 				<div className="relative overflow-hidden h-full w-full">
 					<div className="h-full overflow-y-auto">
 						{dataMenu.map((el) => (

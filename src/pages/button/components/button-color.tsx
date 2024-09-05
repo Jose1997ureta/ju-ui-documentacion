@@ -12,7 +12,7 @@ export const ButtonColor = () => {
 			{keyCurrent === "preview" ? (
 				<Card className="mt-4">
 					<Card.Body className="border rounded-md">
-						<div className="flex items-center gap-x-3">
+						<div className="flex items-center gap-3 flex-wrap">
 							<Button color="primary">Primary</Button>
 							<Button color="secondary">Secondary</Button>
 							<Button color="neutral">Neutral</Button>
@@ -30,7 +30,7 @@ export const ButtonColor = () => {
 
 const App = () => {
 	return (
-		<div className="flex items-center gap-x-3">
+		<div className="flex items-center gap-3 flex-wrap">
 			<Button color="primary">Primary</Button>
 			<Button color="secondary">Secondary</Button>
 			<Button color="neutral">Neutral</Button>
