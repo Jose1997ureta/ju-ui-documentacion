@@ -8,12 +8,12 @@ export const useScreen = () => {
 
 		if (width < 768) {
 			setIsResponsive(true);
-			document.getElementsByTagName("body")[0].classList.add("overflow-hidden");
+			// document.getElementsByTagName("body")[0].classList.add("overflow-hidden");
 		} else {
 			setIsResponsive(false);
-			document
-				.getElementsByTagName("body")[0]
-				.classList.remove("overflow-hidden");
+			// document
+			// 	.getElementsByTagName("body")[0]
+			// 	.classList.remove("overflow-hidden");
 		}
 	}, []);
 

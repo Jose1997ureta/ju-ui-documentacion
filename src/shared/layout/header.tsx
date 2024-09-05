@@ -35,6 +35,10 @@ export const Header = () => {
 			document.getElementById("aside")?.classList.contains("hidden") ?? false;
 
 		emitter.emit("isMenu", aside);
+
+		document
+			.getElementsByTagName("body")[0]
+			.classList.toggle("overflow-hidden");
 	};
 
 	return (

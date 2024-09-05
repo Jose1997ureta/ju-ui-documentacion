@@ -1,4 +1,4 @@
-import { NavLink, useNavigate, useRoutes } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AsideDataMenuItemProps } from "../interface/aside.interface";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useMitt } from "../../../hooks/use-mitt";
@@ -9,21 +9,24 @@ interface Props {
 
 export const AsideMenuItem = ({ el }: Props) => {
 	const { emitter } = useMitt();
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 
-	const handleClick = () => {
-		// const aside = document.getElementById("aside");
-
-		// aside?.classList.add("hidden");
+	const handleClick = (to: string) => {
 		emitter.emit("isMenu", false);
-		// alert();
+		document
+			.getElementsByTagName("body")[0]
+			.classList.remove("overflow-hidden");
+		navigate(to);
 	};
 
 	return (
 		<NavLink
 			to={el.path}
 			className="flex items-center gap-x-2 py-2  w-full"
-			onClick={() => handleClick()}
+			onClick={(e) => {
+				e.preventDefault();
+				handleClick(el.path);
+			}}
 		>
 			{({ isActive }) => (
 				<>
